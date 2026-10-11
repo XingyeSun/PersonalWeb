@@ -103,6 +103,29 @@ header{padding:28px var(--page-inset)}main{padding:0 var(--page-inset)}footer{pa
 
 
 #lightbox.is-zoomed .lightbox-scroll{cursor:grab;touch-action:none;user-select:none}#lightbox.is-zoomed img{cursor:grab;user-select:none;-webkit-user-drag:none}#lightbox.is-zoomed .is-dragging,#lightbox.is-zoomed .is-dragging img{cursor:grabbing}
+
+/* Mobile: preserve original photo order across the two desktop stacks. */
+@media(max-width:700px){
+ .project-photo-grid{display:flex;flex-direction:column;gap:24px}
+ .project-photo-column{display:contents}
+ .project-photo-grid figure{width:100%}
+ .exhibition-photo-grid{grid-template-columns:minmax(0,1fr);gap:24px}
+}
+
+
+/* Mobile Works index: alternating image/text rows; home links remain unchanged. */
+@media(max-width:700px){
+ .works-index-grid{grid-template-columns:minmax(0,1fr);gap:28px}
+ .works-index-grid .card{display:grid;grid-template-columns:1.5fr 1fr;gap:22px;align-items:start}
+ .works-index-grid .card img{width:100%;height:auto;aspect-ratio:1/1;max-height:none;grid-column:1;grid-row:1}
+ .works-index-grid .card .caption{display:flex!important;flex-direction:column;justify-content:flex-start;gap:14px;padding:13px 0;grid-column:2;grid-row:1}
+ .works-index-grid .caption h3{font-size:16px;line-height:1.5;overflow-wrap:anywhere}
+ .works-index-grid .caption small{font-size:12px;line-height:1.6}
+ .works-index-grid .card:nth-child(even){grid-template-columns:1fr 1.5fr}
+ .works-index-grid .card:nth-child(even) img{grid-column:2}
+ .works-index-grid .card:nth-child(even) .caption{grid-column:1}
+}
+
 </style></head><body><a class="skip" href="#main">Skip to content</a><header><a class="brand" href="#/">XINGYE SUN</a><nav aria-label="Main navigation"><a href="#/works">WORKS</a><a href="#/exhibitions">EXHIBITIONS</a><a href="#/about">ABOUT</a><a href="#/contact">CONTACT</a></nav></header><main id="main"></main><footer><span>Xingye Sun · 孙星烨</span><span>Jewellery & wearable objects</span><a href="https://www.instagram.com/sun.x.y_art/" target="_blank" rel="noopener">Instagram ↗</a></footer><dialog id="lightbox"><button aria-label="Close image" id="close">Close ×</button><button type="button" id="zoom-image" aria-label="Zoom image">Zoom +</button><div class="lightbox-scroll"><img alt=""></div><p></p></dialog><script>
 window.CONTENT = {
   "projects": [
@@ -610,10 +633,10 @@ document.addEventListener('visibilitychange',schedule);schedule();carouselCleanu
 }
 
 
-function projectGallery(p){const cover=p.cover||0;const imgs=[...p.images.filter((_,i)=>i!==cover),p.images[cover]];const photo=(im,i)=>`<figure>${image(im,`${p.title} — photograph ${i+1}`,'project-photo')}${im.caption?`<figcaption>${esc(im.caption)}</figcaption>`:''}</figure>`;return `<section class="project-photo-grid" aria-label="${esc(p.title)} project photographs">${[0,1].map(col=>`<div class="project-photo-column">${imgs.map((im,i)=>i%2===col?photo(im,i):'').join('')}</div>`).join('')}</section>`}
+function projectGallery(p){const cover=p.cover||0;const imgs=[...p.images.filter((_,i)=>i!==cover),p.images[cover]];const photo=(im,i)=>`<figure style="order:${i}">${image(im,`${p.title} — photograph ${i+1}`,'project-photo')}${im.caption?`<figcaption>${esc(im.caption)}</figcaption>`:''}</figure>`;return `<section class="project-photo-grid" aria-label="${esc(p.title)} project photographs">${[0,1].map(col=>`<div class="project-photo-column">${imgs.map((im,i)=>i%2===col?photo(im,i):'').join('')}</div>`).join('')}</section>`}
 function render(){stopCarousel();const path=location.hash.slice(2).split('/'), page=path[0]||'home';document.querySelectorAll('nav a').forEach(a=>{if(a.hash===`#/${page}`)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});let title='Xingye Sun';
 if(page==='home'){main.innerHTML=`${homeCarousel()}<section class="home-intro"><div class="home-name"><h1>XINGYE SUN</h1><p>Jewellery Artist & Designer</p></div><div class="home-statement">${paragraphs(D.statement)}<a class="home-more" href="#/about">READ MORE →</a></div></section><section class="home-section"><div class="home-section-head"><h2>Selected works</h2><a href="#/works">VIEW ALL WORKS →</a></div><div class="home-work-grid">${D.projects.slice(0,4).map(homeWork).join('')}</div></section><section class="home-bottom"><div class="home-about"><h2>About</h2><div class="home-about-body">${image(D.portrait,'Xingye Sun')}<div><p>${esc(D.biography[0])}</p><a class="home-more" href="#/about">READ MORE →</a></div></div></div><div class="home-exhibitions"><div class="home-section-head"><h2>Selected exhibitions</h2><a href="#/exhibitions">VIEW ALL →</a></div>${D.exhibitions.slice(0,3).map(e=>`<a class="home-exhibition" href="#/exhibitions/${e.slug}"><span>${e.year}</span><div>${esc(e.title.toUpperCase())}<small>${esc(e.venue)}</small></div></a>`).join('')}</div></section>`;startCarousel()}
-else if(page==='works'&&!path[1]){title='Works';main.innerHTML=`<div class="intro"><h1>Works</h1></div><div class="grid">${D.projects.map(card).join('')}</div>`}
+else if(page==='works'&&!path[1]){title='Works';main.innerHTML=`<div class="intro"><h1>Works</h1></div><div class="grid works-index-grid">${D.projects.map(card).join('')}</div>`}
 else if(page==='works'){const p=D.projects.find(p=>p.slug===path[1]);if(!p)return missing();title=p.title;const related=D.exhibitions.filter(e=>e.works.includes(p.slug));main.innerHTML=`<a class="back" href="#/works">← All works</a><div class="project-heading"><h1>${esc(p.title)}</h1></div><section class="project-layout"><div class="project-cover">${image(p.images[p.cover||0],p.title,'project-cover-image',true)}</div><div class="project-description"><div class="copy">${paragraphs(p.text)}</div><dl class="project-facts"><dt>Materials</dt><dd>${esc(p.materials)}</dd><dt>Year</dt><dd>${p.year}</dd><dt>Category</dt><dd>${esc(p.type)}</dd>${p.credits?`<dt>Credits</dt><dd>${esc(p.credits)}</dd>`:''}</dl></div></section>${projectGallery(p)}${related.length?`<div class="section-bar"><h2>Exhibited in</h2></div>${related.map(exRow).join('')}`:''}<div class="section-bar"><h2>Explore more</h2><a href="#/works">All works ↗</a></div><div class="grid">${D.projects.filter(x=>x!==p).slice(0,2).map(card).join('')}</div>`}
 else if(page==='exhibitions'&&!path[1]){title='Exhibitions';main.innerHTML=`<div class="intro"><h1>Exhibitions</h1></div>${D.exhibitions.map(exRow).join('')}`}
 else if(page==='exhibitions'){const e=D.exhibitions.find(x=>x.slug===path[1]);if(!e)return missing();title=e.title;main.innerHTML=`<a class="back" href="#/exhibitions">← All exhibitions</a><div class="project-heading"><h1>${esc(e.title.toUpperCase())}</h1></div><section class="exhibition-information"><div class="copy">${e.text?paragraphs(e.text):`<p>${esc(e.subtitle)}</p>`}<p class="exhibition-location">${esc(e.venue)}</p><p class="exhibition-date">${esc(e.dates)}</p>${e.url?`<p><a href="${esc(e.url)}" target="_blank" rel="noopener">Official exhibition information ↗</a></p>`:''}</div></section><section class="exhibition-photo-grid" aria-label="${esc(e.title)} exhibition photographs">${e.images.map((im,i)=>`<figure>${image(im,`${e.title} — exhibition photograph ${i+1}`,'project-photo')}${im.caption?`<figcaption>${esc(im.caption)}</figcaption>`:''}</figure>`).join('')}</section>${e.works.length?`<div class="section-bar"><h2>Related works</h2></div><div class="grid">${e.works.map(s=>card(D.projects.find(p=>p.slug===s))).join('')}</div>`:''}`}
