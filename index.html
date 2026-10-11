@@ -4,7 +4,106 @@
 .hero{display:block}.hero img{object-fit:contain;background:#eeede9}
 @media(max-width:700px){.hero img{height:auto;max-height:none}.hero-label{gap:18px}.hero-label span:last-child{white-space:nowrap}}
 
-</style></head><body><a class="skip" href="#main">Skip to content</a><header><a class="brand" href="#/">Xingye Sun</a><nav aria-label="Main navigation"><a href="#/works">WORKS</a><a href="#/exhibitions">EXHIBITIONS</a><a href="#/about">ABOUT</a><a href="#/contact">CONTACT</a></nav></header><main id="main"></main><footer><span>Xingye Sun · 孙星烨</span><span>Jewellery & wearable objects</span><a href="https://www.instagram.com/sun.x.y_art/" target="_blank" rel="noopener">Instagram ↗</a></footer><dialog id="lightbox"><button aria-label="Close image" id="close">Close ×</button><img alt=""><p></p></dialog><script>
+
+/* Option A: shared page frame; original typography and palette retained. */
+:root{--page-width:1400px;--page-inset:clamp(20px,2.5vw,40px)}
+header,main,footer{width:calc(100% - 48px);max-width:var(--page-width);margin-left:auto;margin-right:auto}
+header{padding:28px var(--page-inset)}main{padding:0 var(--page-inset)}footer{padding:28px 0;margin-top:48px;width:calc(100% - 48px - 2 * var(--page-inset));max-width:calc(var(--page-width) - 2 * var(--page-inset))}
+.story,.contact{max-width:none}.card img{height:auto;aspect-ratio:1/1}.photos img{height:auto;aspect-ratio:1/1}
+.home-carousel{position:relative;margin:0;overflow:hidden;background:#eeede9;touch-action:pan-y}
+.carousel-track{display:flex;transform:translateX(-100%);transition:transform .6s ease;will-change:transform}
+.carousel-slide{flex:0 0 100%;min-width:0;margin:0}.carousel-slide img{display:block;width:100%;height:auto;aspect-ratio:2.3/1;object-fit:cover;object-position:center}
+.carousel-arrow{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:44px;padding:8px;background:rgba(248,247,243,.55);border:0;border-radius:0;color:var(--ink);z-index:2;display:grid;place-items:center}
+.carousel-arrow svg{width:12px;height:24px;fill:none;stroke:currentColor;stroke-width:1;stroke-linecap:round;stroke-linejoin:round}.carousel-arrow.prev{left:18px}.carousel-arrow.next{right:18px}
+.home-intro{display:grid;grid-template-columns:1.12fr 1fr;gap:38px;padding:44px 0 42px;align-items:start}.home-name h1{font-size:clamp(40px,5.7vw,80px);letter-spacing:-.04em;white-space:nowrap}.home-name p{font-size:20px;margin-top:10px}.home-statement{border-left:1px solid var(--line);padding-left:36px;font-size:14px;line-height:1.7}.home-statement p+p{margin-top:16px}.home-more{display:block;text-align:right;font-size:11px;margin-top:18px;letter-spacing:.07em}
+.home-section{border-top:1px solid var(--line);padding-top:20px}.home-section-head{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:20px}.home-section-head h2,.home-bottom h2{font-size:18px;letter-spacing:.12em;text-transform:uppercase}.home-section-head a{font-size:10px;letter-spacing:.09em}
+.home-work-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px 36px;margin-bottom:42px}.home-work{display:grid;grid-template-columns:1.65fr 1fr;gap:24px;align-items:stretch}.home-work img{width:100%;height:100%;min-height:190px;aspect-ratio:1.65/1;object-fit:contain;background:#eeede9;display:block}.home-work-info{display:flex;flex-direction:column;padding:13px 0}.home-work-info h3{font-size:18px;line-height:1.4;margin:13px 0 8px}.home-work-info .year{color:var(--muted);font-size:12px}.home-work-info .view{margin-top:auto;padding-top:20px;font-size:10px;letter-spacing:.1em}
+.home-bottom{display:grid;grid-template-columns:1.12fr 1fr;gap:36px;padding:26px 0 0;border-top:1px solid var(--line)}.home-about-body{display:grid;grid-template-columns:140px 1fr;gap:26px;margin-top:24px;font-size:13px}.home-about-body img{width:100%;height:160px;object-fit:cover}.home-about-body .home-more{text-align:left}.home-exhibitions{border-left:1px solid var(--line);padding-left:36px}.home-exhibition{display:grid;grid-template-columns:55px 1fr;gap:20px;margin-top:22px;font-size:13px}.home-exhibition small{display:block;color:var(--muted);font-size:11px}.home-exhibition>span{color:var(--muted);font-size:12px}
+@media(max-width:1000px){.home-work{gap:15px;grid-template-columns:1.4fr 1fr}.home-work-info h3{font-size:15px}.home-about-body{grid-template-columns:95px 1fr;gap:18px}.home-name h1{font-size:5.3vw}}
+@media(max-width:700px){header,main{width:100%}header{padding:24px var(--page-inset)}footer{width:calc(100% - 2 * var(--page-inset))}.carousel-slide img{aspect-ratio:1.4/1}.carousel-arrow.prev{left:8px}.carousel-arrow.next{right:8px}.carousel-arrow{width:28px;height:38px}.home-intro,.home-bottom{grid-template-columns:1fr;gap:24px}.home-name h1{font-size:clamp(38px,10vw,60px)}.home-name p{font-size:17px}.home-statement,.home-exhibitions{border-left:0;padding-left:0}.home-statement{border-top:1px solid var(--line);padding-top:24px}.home-work-grid{grid-template-columns:1fr;gap:24px}.home-work{grid-template-columns:1.5fr 1fr;gap:22px}.home-work img{min-height:160px}.home-work-info h3{font-size:16px}.home-section-head h2,.home-bottom h2{font-size:15px}.home-about-body{grid-template-columns:105px 1fr}.home-exhibitions{border-top:1px solid var(--line);padding-top:24px}.home-intro{padding:32px 0}.home-bottom{padding-top:24px}}
+@media(prefers-reduced-motion:reduce){.carousel-track{transition:none}}
+
+
+/* Works covers: proportional fill within square frames. */
+.card img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:center;max-height:none}
+
+/* Homepage selected works: square, proportional cover images. */
+.home-work{align-items:start}.home-work img{width:100%;height:auto;aspect-ratio:1/1;min-height:0;object-fit:cover;object-position:center}.home-work-info{align-self:stretch}
+
+/* About portrait: wider proportions and a smaller visual footprint. */
+.about-top{grid-template-columns:minmax(0,1.05fr) minmax(0,1.45fr);gap:clamp(32px,5vw,70px)}.about-top .portrait{width:100%;height:auto;aspect-ratio:4/5;max-height:440px;object-fit:cover;object-position:center 45%}
+@media(max-width:700px){.about-top{grid-template-columns:1fr;gap:30px}.about-top .portrait{width:min(100%,340px);max-height:none;aspect-ratio:4/5;display:block;margin-inline:auto}}
+
+/* About portrait: smaller 3:4 portrait frame. */
+.about-top{grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:clamp(36px,6vw,80px);align-items:start}
+.about-top .portrait{display:block;width:100%;height:auto;aspect-ratio:3/4;max-height:none;object-fit:cover;object-position:center}
+@media(max-width:700px){.about-top{grid-template-columns:1fr;gap:32px}.about-top .portrait{width:min(100%,240px);height:auto;aspect-ratio:3/4;max-height:none;object-position:center}}
+
+
+/* Work detail: portrait cover, statement and proportional layered gallery. */
+.project-heading{margin:8px 0 38px}.project-heading h1{font-size:clamp(32px,4.4vw,62px)}
+.project-layout{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,64px);align-items:start}
+.project-cover-image{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:center;cursor:zoom-in}
+.project-description{border-top:1px solid var(--line);padding-top:20px}.project-description .copy{font-size:15px;line-height:1.8;max-width:none}
+.project-facts{display:grid;grid-template-columns:90px minmax(0,1fr);gap:12px 20px;border-top:1px solid var(--line);padding-top:22px;margin:28px 0 0;font-size:13px}.project-facts dt{font-size:10px;text-transform:uppercase;letter-spacing:.1em}.project-facts dd{margin:0}
+.project-gallery{margin:44px 0 54px;border-top:1px solid var(--line);padding-top:28px}.project-gallery-stage{position:relative;height:clamp(300px,42vw,520px);overflow:hidden;touch-action:pan-y}
+.project-slide{position:absolute;inset:12px 48px;margin:0;display:flex;justify-content:center;align-items:center;pointer-events:none;opacity:0;transform:translateX(0) scale(.68);transition:transform .45s ease,opacity .45s ease}
+.project-slide img{display:block;width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;box-shadow:0 5px 18px #0002;cursor:zoom-in}
+.project-slide[data-offset="0"]{opacity:1;z-index:5;transform:translateX(0) scale(1);pointer-events:auto}
+.project-slide[data-offset="-1"]{opacity:.8;z-index:3;transform:translateX(-24%) scale(.82)}.project-slide[data-offset="1"]{opacity:.8;z-index:3;transform:translateX(24%) scale(.82)}
+.project-slide[data-offset="-2"]{opacity:.6;z-index:1;transform:translateX(-40%) scale(.68)}.project-slide[data-offset="2"]{opacity:.6;z-index:1;transform:translateX(40%) scale(.68)}
+.project-gallery .carousel-arrow{z-index:8}.project-gallery .prev{left:0}.project-gallery .next{right:0}.project-gallery-caption{text-align:center;font-size:11px;color:var(--muted);padding-top:20px;min-height:42px}.project-gallery-caption .photo-caption{display:block;margin-top:8px}
+@media(max-width:700px){.project-heading{margin:0 0 28px}.project-layout{grid-template-columns:1fr;gap:28px}.project-cover{max-width:360px;width:100%;margin:auto}.project-description .copy{font-size:15px}.project-gallery-stage{height:360px}.project-slide{inset:12px 30px}.project-slide[data-offset="-1"]{transform:translateX(-18%) scale(.8)}.project-slide[data-offset="1"]{transform:translateX(18%) scale(.8)}.project-slide[data-offset="-2"]{transform:translateX(-30%) scale(.65)}.project-slide[data-offset="2"]{transform:translateX(30%) scale(.65)}}
+@media(prefers-reduced-motion:reduce){.project-slide{transition:none}}
+
+
+.project-gallery-dots{display:flex;justify-content:center;align-items:center;gap:4px;margin-top:22px}
+.project-dot{display:grid;place-items:center;width:24px;height:24px;border:0;background:transparent;padding:0;color:var(--ink)}
+.project-dot::before{content:'';width:5px;height:5px;box-sizing:border-box;border:1px solid var(--muted);border-radius:50%;background:transparent}
+.project-dot.is-active::before{background:var(--ink);border-color:var(--ink)}
+.project-gallery-caption{padding-top:0;min-height:0}.project-gallery-caption:empty{display:none}
+
+
+/* Work photographs: single column, equal widths, natural image proportions. */
+.project-photo-list{display:grid;grid-template-columns:minmax(0,1fr);gap:40px;width:100%;margin:44px 0 54px;padding-top:32px;border-top:1px solid var(--line)}
+.project-photo-list figure{margin:0;min-width:0}.project-photo-list .project-detail-photo{display:block;width:100%;height:auto;max-width:none;max-height:none;aspect-ratio:auto;object-fit:contain;cursor:zoom-in}
+.project-photo-list figcaption{font-size:11px;color:var(--muted);padding-top:12px}
+@media(max-width:700px){.project-photo-list{gap:24px;margin:32px 0 40px;padding-top:24px}}
+
+
+/* Work photographs: equal-width columns, natural ratios, aligned top edges. */
+.project-photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 24px;align-items:start;margin:44px 0 54px;padding-top:28px;border-top:1px solid var(--line)}
+.project-photo-grid figure{margin:0;min-width:0;align-self:start}
+.project-photo-grid img{display:block;width:100%;height:auto;max-height:none;aspect-ratio:auto;object-fit:contain;cursor:zoom-in}
+.project-photo-grid figcaption{font-size:11px;color:var(--muted);margin-top:10px}
+@media(max-width:700px){.project-photo-grid{gap:24px 14px;margin-top:32px}}
+
+
+/* Independent vertical stacks avoid empty space beneath shorter photographs. */
+.project-photo-grid{gap:24px;align-items:start}
+.project-photo-column{display:flex;flex-direction:column;gap:32px;min-width:0}
+@media(max-width:700px){.project-photo-grid{gap:14px}.project-photo-column{gap:24px}}
+
+
+.exhibition-information{max-width:760px;margin-bottom:36px}.exhibition-information .copy{font-size:15px}
+.exhibition-photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 24px;align-items:start;border-top:1px solid var(--line);padding-top:28px;margin-bottom:54px}
+.exhibition-photo-grid figure{margin:0;min-width:0}.exhibition-photo-grid img{display:block;width:100%;height:auto;aspect-ratio:auto;max-height:none;cursor:zoom-in}
+.exhibition-photo-grid figcaption{font-size:11px;color:var(--muted);margin-top:10px}
+@media(max-width:700px){.exhibition-photo-grid{gap:14px 10px}}
+
+
+.exhibition-information .copy p+p{margin-top:12px}
+
+#lightbox{width:96vw;max-width:1600px;padding:48px 20px 20px;max-height:94vh;overflow:hidden}
+#lightbox .lightbox-scroll{height:75vh;overflow:auto;text-align:center}
+#lightbox img{display:block;width:100%;height:100%;object-fit:contain;cursor:zoom-in;margin:auto}
+#lightbox #zoom-image{right:115px;top:12px}
+#lightbox.is-zoomed img{width:auto;height:auto;max-width:none;max-height:none;margin:0 auto;cursor:zoom-out}
+#lightbox>p{padding-top:10px}
+
+
+#lightbox.is-zoomed .lightbox-scroll{cursor:grab;touch-action:none;user-select:none}#lightbox.is-zoomed img{cursor:grab;user-select:none;-webkit-user-drag:none}#lightbox.is-zoomed .is-dragging,#lightbox.is-zoomed .is-dragging img{cursor:grabbing}
+</style></head><body><a class="skip" href="#main">Skip to content</a><header><a class="brand" href="#/">XINGYE SUN</a><nav aria-label="Main navigation"><a href="#/works">WORKS</a><a href="#/exhibitions">EXHIBITIONS</a><a href="#/about">ABOUT</a><a href="#/contact">CONTACT</a></nav></header><main id="main"></main><footer><span>Xingye Sun · 孙星烨</span><span>Jewellery & wearable objects</span><a href="https://www.instagram.com/sun.x.y_art/" target="_blank" rel="noopener">Instagram ↗</a></footer><dialog id="lightbox"><button aria-label="Close image" id="close">Close ×</button><button type="button" id="zoom-image" aria-label="Zoom image">Zoom +</button><div class="lightbox-scroll"><img alt=""></div><p></p></dialog><script>
 window.CONTENT = {
   "projects": [
     {
@@ -22,62 +121,84 @@ window.CONTENT = {
           "src": "assets/image-039.jpg",
           "original": "Works\\01 Through the Hand, Seeing the Scene\\Photos\\1a15038ec4ebcc43a74e97325258dd6a.jpg",
           "width": 6249,
-          "height": 4166
+          "height": 4166,
+          "assetPath": "assets/image-039.jpg"
         },
         {
           "src": "assets/image-040.jpg",
           "original": "Works\\01 Through the Hand, Seeing the Scene\\Photos\\6ef7f91b1444ea63a8329b04abeda097.jpg",
           "width": 5996,
-          "height": 3998
+          "height": 3998,
+          "assetPath": "assets/image-040.jpg"
         },
         {
           "src": "assets/image-041.jpg",
           "original": "Works\\01 Through the Hand, Seeing the Scene\\Photos\\7e8824a65o7d1d4159239333a8a5018b.jpg",
           "width": 4480,
-          "height": 5973
+          "height": 5973,
+          "assetPath": "assets/image-041.jpg"
         },
         {
           "src": "assets/image-042.jpg",
           "original": "Works\\01 Through the Hand, Seeing the Scene\\Photos\\c86e42b5909b1d2d2f03bc0036039aaa.jpg",
           "width": 5661,
-          "height": 3773
+          "height": 3773,
+          "assetPath": "assets/image-042.jpg"
         },
         {
           "src": "assets/image-043.jpg",
           "original": "Works\\01 Through the Hand, Seeing the Scene\\Photos\\cca61465af8caad53d20d30ea17d2303.jpg",
           "width": 6061,
-          "height": 4041
+          "height": 4041,
+          "assetPath": "assets/image-043.jpg"
         }
       ],
-      "cover": 4
+      "cover": 2
     },
     {
-      "slug": "ripple",
-      "title": "Ripple",
-      "year": "2023",
-      "materials": "gilding metal, brass",
-      "type": "Bracelet",
+      "slug": "mango-mango",
+      "title": "Mango Mango",
+      "year": "2024",
+      "materials": "mango, brass",
+      "type": "Brooch",
       "text": [
-        "Rainy day ripples form a quiet bridge between two places — a koi pond from home and rivers in London. Though far apart, they are connected through the rhythm of falling rain and shifting reflections. These ripples evoke memories, linking past and present through shared moments. Reaching into the water becomes a symbolic act — a way to touch memory and briefly unite two worlds across time and space."
+        "Mangoes represent more than a fruit—they carry emotional weight tied to summer, family, and a sense of belonging. They evoke memories of childhood joy and freedom, especially the warmth of summers spent with grandparents. The red mango peel symbolizes the vividness of those cherished moments— the laughter, the togetherness, and the comfort of being rooted in a place called home. It reflects a deep emotional connection to family, childhood, and identity, serving as a symbolic thread that ties the past to the present."
       ],
       "images": [
         {
-          "src": "assets/image-044.jpg",
-          "original": "Works\\02 Ripple\\Photos\\2bd5510bclf359be40a51b5819e1126f.jpg",
-          "width": 1280,
-          "height": 1706
+          "src": "assets/image-051.jpg",
+          "original": "Works\\04 Mango Mango\\Photos\\14008a6a9jd1d2b0349aa7604df2b96a.jpg",
+          "width": 4480,
+          "height": 6720,
+          "assetPath": "assets/image-051.jpg"
         },
         {
-          "src": "assets/image-045.jpg",
-          "original": "Works\\02 Ripple\\Photos\\4e7097d4ag079f151b71df99f41d9ff1.PNG",
-          "width": 2044,
-          "height": 2725
+          "src": "assets/image-052.jpg",
+          "original": "Works\\04 Mango Mango\\Photos\\44854bcdel77610d7197f29f24f60289 - 副本.jpg",
+          "width": 4480,
+          "height": 6720,
+          "assetPath": "assets/image-052.jpg"
         },
         {
-          "src": "assets/image-046.jpg",
-          "original": "Works\\02 Ripple\\Photos\\dacb15801kffc45a190369696e8a688c.jpg",
-          "width": 1279,
-          "height": 1706
+          "src": "assets/image-053.jpg",
+          "original": "Works\\04 Mango Mango\\Photos\\4ef06fb8eqb8a100d65027e10742779f - 副本.jpg",
+          "width": 4480,
+          "height": 6720,
+          "assetPath": "assets/image-053.jpg"
+        },
+        {
+          "src": "assets/image-054.jpg",
+          "original": "Works\\04 Mango Mango\\Photos\\64f85d376t675bd21b0170054e17bde0.jpg",
+          "width": 4480,
+          "height": 3360,
+          "assetPath": "assets/image-054.jpg"
+        },
+        {
+          "src": "assets/image-055.jpg",
+          "original": "Works\\04 Mango Mango\\Photos\\7093bb1cbof4b3619e8409c205458c75.jpg",
+          "width": 4480,
+          "height": 3360,
+          "assetPath": "assets/image-055.jpg"
         }
       ],
       "cover": 0
@@ -96,69 +217,56 @@ window.CONTENT = {
           "src": "assets/image-047.jpg",
           "original": "Works\\03 Every Pound Helps\\Photos\\medal 1.jpg",
           "width": 3024,
-          "height": 4032
+          "height": 4032,
+          "assetPath": "assets/image-047.jpg"
         },
         {
           "src": "assets/image-048.jpg",
           "original": "Works\\03 Every Pound Helps\\Photos\\medal 2.jpg",
           "width": 3024,
-          "height": 4032
+          "height": 4032,
+          "assetPath": "assets/image-048.jpg"
         },
         {
           "src": "assets/image-049.jpg",
           "original": "Works\\03 Every Pound Helps\\Photos\\medal 3.jpg",
           "width": 3024,
-          "height": 4032
-        },
-        {
-          "src": "assets/image-050.jpg",
-          "original": "Works\\03 Every Pound Helps\\Photos\\石膏模型.jpg",
-          "width": 6000,
-          "height": 4000,
-          "caption": "Plaster model — process study"
+          "height": 4032,
+          "assetPath": "assets/image-049.jpg"
         }
       ],
       "cover": 0
     },
     {
-      "slug": "mango-mango",
-      "title": "Mango Mango",
-      "year": "2024",
-      "materials": "mango, brass",
-      "type": "Brooch",
+      "slug": "ripple",
+      "title": "Ripple",
+      "year": "2023",
+      "materials": "gilding metal, brass",
+      "type": "Bracelet",
       "text": [
-        "Mangoes represent more than a fruit—they carry emotional weight tied to summer, family, and a sense of belonging. They evoke memories of childhood joy and freedom, especially the warmth of summers spent with grandparents. The red mango peel symbolizes the vividness of those cherished moments— the laughter, the togetherness, and the comfort of being rooted in a place called home. It reflects a deep emotional connection to family, childhood, and identity, serving as a symbolic thread that ties the past to the present."
+        "Rainy day ripples form a quiet bridge between two places — a koi pond from home and rivers in London. Though far apart, they are connected through the rhythm of falling rain and shifting reflections. These ripples evoke memories, linking past and present through shared moments. Reaching into the water becomes a symbolic act — a way to touch memory and briefly unite two worlds across time and space."
       ],
       "images": [
         {
-          "src": "assets/image-051.jpg",
-          "original": "Works\\04 Mango Mango\\Photos\\14008a6a9jd1d2b0349aa7604df2b96a.jpg",
-          "width": 4480,
-          "height": 6720
+          "src": "assets/image-044.jpg",
+          "original": "Works\\02 Ripple\\Photos\\2bd5510bclf359be40a51b5819e1126f.jpg",
+          "width": 1280,
+          "height": 1706,
+          "assetPath": "assets/image-044.jpg"
         },
         {
-          "src": "assets/image-052.jpg",
-          "original": "Works\\04 Mango Mango\\Photos\\44854bcdel77610d7197f29f24f60289 - 副本.jpg",
-          "width": 4480,
-          "height": 6720
+          "src": "assets/image-045.jpg",
+          "original": "Works\\02 Ripple\\Photos\\4e7097d4ag079f151b71df99f41d9ff1.PNG",
+          "width": 2044,
+          "height": 2725,
+          "assetPath": "assets/image-045.jpg"
         },
         {
-          "src": "assets/image-053.jpg",
-          "original": "Works\\04 Mango Mango\\Photos\\4ef06fb8eqb8a100d65027e10742779f - 副本.jpg",
-          "width": 4480,
-          "height": 6720
-        },
-        {
-          "src": "assets/image-054.jpg",
-          "original": "Works\\04 Mango Mango\\Photos\\64f85d376t675bd21b0170054e17bde0.jpg",
-          "width": 4480,
-          "height": 3360
-        },
-        {
-          "src": "assets/image-055.jpg",
-          "original": "Works\\04 Mango Mango\\Photos\\7093bb1cbof4b3619e8409c205458c75.jpg",
-          "width": 4480,
-          "height": 3360
+          "src": "assets/image-046.jpg",
+          "original": "Works\\02 Ripple\\Photos\\dacb15801kffc45a190369696e8a688c.jpg",
+          "width": 1279,
+          "height": 1706,
+          "assetPath": "assets/image-046.jpg"
         }
       ],
       "cover": 0
@@ -177,34 +285,39 @@ window.CONTENT = {
           "src": "assets/image-056.jpg",
           "original": "Works\\05 Phantom Flock\\Photos\\1.png",
           "width": 2240,
-          "height": 3360
+          "height": 3360,
+          "assetPath": "assets/image-056.jpg"
         },
         {
           "src": "assets/image-057.jpg",
           "original": "Works\\05 Phantom Flock\\Photos\\2.png",
           "width": 3360,
-          "height": 2240
+          "height": 2240,
+          "assetPath": "assets/image-057.jpg"
         },
         {
           "src": "assets/image-058.jpg",
           "original": "Works\\05 Phantom Flock\\Photos\\3.png",
           "width": 3360,
-          "height": 2240
+          "height": 2240,
+          "assetPath": "assets/image-058.jpg"
         },
         {
           "src": "assets/image-059.jpg",
           "original": "Works\\05 Phantom Flock\\Photos\\4.png",
           "width": 2240,
-          "height": 3360
+          "height": 3360,
+          "assetPath": "assets/image-059.jpg"
         },
         {
           "src": "assets/image-060.jpg",
           "original": "Works\\05 Phantom Flock\\Photos\\5.png",
           "width": 4480,
-          "height": 6720
+          "height": 6720,
+          "assetPath": "assets/image-060.jpg"
         }
       ],
-      "cover": 1
+      "cover": 3
     },
     {
       "slug": "pegasus",
@@ -220,25 +333,29 @@ window.CONTENT = {
           "src": "assets/image-061.jpg",
           "original": "Works\\06 Pegasus\\Photos\\f5a3b3212738d99bd5cfa402a8cfbe0c.JPG",
           "width": 853,
-          "height": 1280
+          "height": 1280,
+          "assetPath": "assets/image-061.jpg"
         },
         {
           "src": "assets/image-062.jpg",
           "original": "Works\\06 Pegasus\\Photos\\IMG_2688.jpg",
           "width": 4167,
-          "height": 5556
+          "height": 5556,
+          "assetPath": "assets/image-062.jpg"
         },
         {
           "src": "assets/image-063.jpg",
           "original": "Works\\06 Pegasus\\Photos\\IMG_2690.PNG",
           "width": 4331,
-          "height": 5775
+          "height": 5775,
+          "assetPath": "assets/image-063.jpg"
         },
         {
           "src": "assets/image-064.jpg",
           "original": "Works\\06 Pegasus\\Photos\\飞马ps2.png",
           "width": 4480,
-          "height": 6720
+          "height": 6720,
+          "assetPath": "assets/image-064.jpg"
         }
       ],
       "cover": 0
@@ -255,31 +372,35 @@ window.CONTENT = {
       ],
       "images": [
         {
-          "src": "assets/image-065.jpg",
-          "original": "Works\\07 Belonging\\Photos\\Xingye Sun 1.JPG",
-          "width": 4000,
-          "height": 3000
-        },
-        {
           "src": "assets/image-066.jpg",
           "original": "Works\\07 Belonging\\Photos\\Xingye Sun 2.JPG",
           "width": 3000,
-          "height": 4000
+          "height": 4000,
+          "assetPath": "assets/image-066.jpg"
+        },
+        {
+          "src": "assets/image-065.jpg",
+          "original": "Works\\07 Belonging\\Photos\\Xingye Sun 1.JPG",
+          "width": 4000,
+          "height": 3000,
+          "assetPath": "assets/image-065.jpg"
         },
         {
           "src": "assets/image-067.jpg",
           "original": "Works\\07 Belonging\\Photos\\Xingye Sun 3.JPG",
           "width": 4000,
-          "height": 3000
+          "height": 3000,
+          "assetPath": "assets/image-067.jpg"
         },
         {
           "src": "assets/image-068.jpg",
           "original": "Works\\07 Belonging\\Photos\\Xingye Sun 4.JPG",
           "width": 3001,
-          "height": 4000
+          "height": 4000,
+          "assetPath": "assets/image-068.jpg"
         }
       ],
-      "cover": 0
+      "cover": 3
     },
     {
       "slug": "mallard-reminiscence-of-spring-willows-in-mist",
@@ -293,31 +414,35 @@ window.CONTENT = {
       ],
       "images": [
         {
-          "src": "assets/image-069.jpg",
+          "src": "assets/image-0691.jpg",
           "original": "Works\\08 Mallard · Reminiscence of Spring Willows in Mist\\Photos\\74C14966-B60B-4505-8432-7072FFD5E810.JPG",
           "width": 1440,
-          "height": 962
+          "height": 962,
+          "assetPath": "assets/image-0691.jpg"
         },
         {
-          "src": "assets/image-070.jpg",
+          "src": "assets/image-0701.jpg",
           "original": "Works\\08 Mallard · Reminiscence of Spring Willows in Mist\\Photos\\9CD9DEBF-1963-482C-853A-47705784A34E.jpg",
           "width": 1440,
-          "height": 1800
+          "height": 1800,
+          "assetPath": "assets/image-0701.jpg"
         },
         {
-          "src": "assets/image-071.jpg",
+          "src": "assets/image-0711.jpg",
           "original": "Works\\08 Mallard · Reminiscence of Spring Willows in Mist\\Photos\\IMG_2467.PNG",
           "width": 721,
-          "height": 961
+          "height": 961,
+          "assetPath": "assets/image-0711.jpg"
         },
         {
-          "src": "assets/image-072.jpg",
+          "src": "assets/image-0721.jpg",
           "original": "Works\\08 Mallard · Reminiscence of Spring Willows in Mist\\Photos\\IMG_2468.PNG",
           "width": 721,
-          "height": 961
+          "height": 961,
+          "assetPath": "assets/image-0721.jpg"
         }
       ],
-      "cover": 0
+      "cover": 1
     }
   ],
   "exhibitions": [
@@ -330,6 +455,12 @@ window.CONTENT = {
       "venue": "Vitsœ Showroom, Munich, Germany",
       "images": [
         {
+          "src": "assets/image-027.jpg",
+          "original": "Exhibitions\\CYCLES\\IMG_3714.heic",
+          "width": 2672,
+          "height": 3562
+        },
+        {
           "src": "assets/image-025.jpg",
           "original": "Exhibitions\\CYCLES\\IMG_3707.heic",
           "width": 3024,
@@ -340,12 +471,6 @@ window.CONTENT = {
           "original": "Exhibitions\\CYCLES\\IMG_3709.HEIC",
           "width": 3024,
           "height": 4032
-        },
-        {
-          "src": "assets/image-027.jpg",
-          "original": "Exhibitions\\CYCLES\\IMG_3714.heic",
-          "width": 2672,
-          "height": 3562
         }
       ],
       "works": [
@@ -445,7 +570,7 @@ window.CONTENT = {
     }
   ],
   "portrait": {
-    "src": "assets/image-004.jpg",
+    "src": "assets/image-0041.jpg",
     "original": "About\\个人照片.jpg",
     "width": 1934,
     "height": 1934
@@ -465,19 +590,53 @@ const D=window.CONTENT, main=document.querySelector('main');
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const image=(i,alt,cls='',eager=false)=>`<img class="${cls}" src="${i.src}" width="${i.width}" height="${i.height}" alt="${esc(alt)}" ${eager?'fetchpriority="high"':'loading="lazy"'}>`;
 const paragraphs=a=>a.map(p=>`<p>${esc(p)}</p>`).join('');
-const card=p=>`<a class="card" href="#/works/${p.slug}">${image(p.images[p.cover||0],p.title)}<div class="caption"><h3>${esc(p.title)}</h3><small>${p.year} · ${p.type}</small></div></a>`;
+function coverImage(p){const img=image(p.images[p.cover||0],p.title);return ['through-the-hand-seeing-the-scene','ripple','mango-mango'].includes(p.slug)?img.replace('<img ', '<img style="object-position:center 62%" '):img}
+const card=p=>`<a class="card" href="#/works/${p.slug}">${coverImage(p)}<div class="caption"><h3>${esc(p.title)}</h3><small>${p.year} · ${p.type}</small></div></a>`;
 const gallery=(imgs,title)=>`<div class="photos">${imgs.map((i,n)=>`<figure>${image(i,`${title} — photograph ${n+1}`)}${i.caption?`<figcaption>${esc(i.caption)}</figcaption>`:''}</figure>`).join('')}</div>`;
-function render(){const path=location.hash.slice(2).split('/'), page=path[0]||'home';document.querySelectorAll('nav a').forEach(a=>{if(a.hash===`#/${page}`)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});let title='Xingye Sun';
-if(page==='home'){const p=D.projects[0];main.innerHTML=`<div class="home-title"><h1>Xingye Sun</h1><p class="eyebrow">Jewellery artist & designer<br>London / Suzhou</p></div><a class="hero" href="#/works/${p.slug}">${image(p.images[p.cover||0],p.title,'',true)}<div class="hero-label"><span>${p.title}</span><span>2024 · View project ↗</span></div></a><div class="section-bar"><h2>Selected works</h2><a href="#/works">All works ↗</a></div><div class="grid">${D.projects.slice(1,5).map(card).join('')}</div>`}
-else if(page==='works'&&!path[1]){title='Works';main.innerHTML=`<div class="intro"><h1>Works</h1><p>Contemporary art jewellery<br>and wearable objects · 2022–2025</p></div><div class="grid">${D.projects.map(card).join('')}</div>`}
-else if(page==='works'){const p=D.projects.find(p=>p.slug===path[1]);if(!p)return missing();title=p.title;const related=D.exhibitions.filter(e=>e.works.includes(p.slug));main.innerHTML=`<a class="back" href="#/works">← All works</a><div class="detail-head"><h1>${esc(p.title)}</h1><dl class="meta"><dt>Year / Object</dt><dd>${p.year} / ${p.type}</dd><dt>Materials</dt><dd>${esc(p.materials)}</dd>${p.credits?`<dt>Credits</dt><dd>${esc(p.credits)}</dd>`:''}</dl></div>${image(p.images[p.cover||0],p.title,'lead-image',true)}<div class="story"><h2>About the work</h2><div class="copy">${paragraphs(p.text)}</div></div>${gallery(p.images.filter((_,i)=>i!==(p.cover||0)),p.title)}${related.length?`<div class="section-bar"><h2>Exhibited in</h2></div>${related.map(exRow).join('')}`:''}<div class="section-bar"><h2>Explore more</h2><a href="#/works">All works ↗</a></div><div class="grid">${D.projects.filter(x=>x!==p).slice(0,2).map(card).join('')}</div>`}
-else if(page==='exhibitions'&&!path[1]){title='Exhibitions';main.innerHTML=`<div class="intro"><h1>Exhibitions</h1><p>Selected group exhibitions<br>2023–2025</p></div>${D.exhibitions.map(exRow).join('')}`}
-else if(page==='exhibitions'){const e=D.exhibitions.find(x=>x.slug===path[1]);if(!e)return missing();title=e.title;main.innerHTML=`<a class="back" href="#/exhibitions">← All exhibitions</a><div class="detail-head"><div><p class="eyebrow">${esc(e.subtitle)}</p><h1>${esc(e.title)}</h1></div><div class="meta"><p>${e.dates}</p><p>${esc(e.venue)}</p>${e.url?`<p><a href="${esc(e.url)}" target="_blank" rel="noopener">Official exhibition information ↗</a></p>`:''}</div></div>${e.images.length?image(e.images[0],e.title+' — exhibition view','lead-image',true):''}<div class="story"><h2>Exhibition views</h2><div class="copy"><p>${esc(e.title)} — ${esc(e.subtitle)}<br>${esc(e.venue)}<br>${e.dates}</p></div></div>${gallery(e.images.slice(1),e.title)}${e.works.length?`<div class="section-bar"><h2>Related works</h2></div><div class="grid">${e.works.map(s=>card(D.projects.find(p=>p.slug===s))).join('')}</div>`:''}`}
-else if(page==='about'){title='About';main.innerHTML=`<div class="intro"><h1>About</h1><p>Xingye Sun · 孙星烨</p></div><div class="about-top"><div>${image(D.portrait,'Xingye Sun','portrait',true)}</div><div><section class="about-section"><h2>Biography</h2><div class="copy">${paragraphs(D.biography)}</div></section><section class="about-section"><h2>Artist Statement</h2><div class="copy">${paragraphs(D.statement)}</div></section></div></div><div class="credentials"><section><h2>Education & Qualifications</h2><br><div class="credential"><span>2023–Present</span><div>BA (Hons) Jewellery Design<small>Central Saint Martins, University of the Arts London</small></div></div><div class="credential"><span>2025</span><div>Graduate Diamonds Diploma with Honors<small>GIA</small></div></div><div class="credential"><span>2022–2023</span><div>Foundation Diploma in Art and Design<small>Central Saint Martins, University of the Arts London</small></div></div></section><section><h2>Awards</h2><br><div class="credential"><span>2025</span><div>Cartier Award<small>Central Saint Martins, University of the Arts London</small></div></div></section></div>`}
+
+let carouselCleanup=null;
+function stopCarousel(){if(carouselCleanup){carouselCleanup();carouselCleanup=null}}
+function homeWork(p,i){return `<a class="home-work" href="#/works/${p.slug}">${coverImage(p)}<div class="home-work-info"><h3>${esc(p.title)}</h3><span class="year">${p.year}</span><span class="view">VIEW PROJECT →</span></div></a>`}
+function heroImage(im){const name=(im.assetPath||im.src).split('/').pop();const positions={'image-046.jpg':'70%','image-054.jpg':'40%','image-0691.jpg':'60%'};const position=positions[name]||'50%';return image(im,'Featured jewellery photograph','',true).replace('<img ',`<img style="object-position:center ${position}" `)}
+function homeCarousel(){const heroPhotos={'through-the-hand-seeing-the-scene':'image-039.jpg','ripple':'image-046.jpg','mango-mango':'image-054.jpg','pegasus':'image-064.jpg','belonging':'image-065.jpg','mallard-reminiscence-of-spring-willows-in-mist':'image-0691.jpg','phantom-flock':'image-058.jpg','every-pound-helps':'image-049.jpg'};const pics=D.projects.map(p=>p.images.find(im=>(im.assetPath||im.src)==='assets/'+heroPhotos[p.slug]));const slides=[pics[pics.length-1],...pics,pics[0]];return `<section class="home-carousel" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Featured work photographs"><div class="carousel-track">${slides.map((im,i)=>`<figure class="carousel-slide" ${i===0||i===slides.length-1?'aria-hidden="true"':''}>${heroImage(im)}</figure>`).join('')}</div><button class="carousel-arrow prev" type="button" aria-label="Previous photograph"><svg viewBox="0 0 12 24" aria-hidden="true"><path d="M9 3L3 12l6 9"/></svg></button><button class="carousel-arrow next" type="button" aria-label="Next photograph"><svg viewBox="0 0 12 24" aria-hidden="true"><path d="M3 3l6 9-6 9"/></svg></button></section>`}
+function startCarousel(){const box=main.querySelector('.home-carousel'),track=box.querySelector('.carousel-track');let position=1,timer=null,busy=false,settle=null,pointerX=null,hover=false,focused=false,paused=false;const count=track.children.length-2,reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const update=()=>{Array.from(track.children).forEach((slide,i)=>slide.setAttribute('aria-hidden',i!==position?'true':'false'))};update();
+const finish=()=>{clearTimeout(settle);if(position===0||position===count+1){position=position===0?count:1;track.style.transition='none';track.style.transform=`translateX(-${position*100}%)`;track.getBoundingClientRect();track.style.transition=''}busy=false;update()};
+const step=direction=>{if(busy)return;busy=true;position+=direction;track.style.transform=`translateX(-${position*100}%)`;update();settle=setTimeout(finish,reduced?0:650)};
+const clear=()=>{clearInterval(timer);timer=null};const schedule=()=>{clear();if(!hover&&!focused&&!paused&&!document.hidden&&!reduced)timer=setInterval(()=>step(1),3000)};
+const manual=direction=>{step(direction);schedule()};box.querySelector('.prev').onclick=()=>manual(-1);box.querySelector('.next').onclick=()=>manual(1);
+box.onpointerdown=e=>{if(e.target.closest('button'))return;pointerX=e.clientX;clear()};box.onpointerup=e=>{if(pointerX!==null){const dx=e.clientX-pointerX;if(Math.abs(dx)>40)step(dx<0?1:-1);pointerX=null;schedule()}};box.onpointercancel=()=>{pointerX=null;schedule()};box.onpointerleave=()=>{pointerX=null;hover=false;schedule()};box.onmouseenter=()=>{hover=true;clear()};box.onmouseleave=()=>{hover=false;schedule()};box.onfocusin=()=>{focused=true;clear()};box.onfocusout=e=>{if(!box.contains(e.relatedTarget)){focused=false;schedule()}};box.onkeydown=e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();manual(e.key==='ArrowRight'?1:-1)}if(e.key===' '){e.preventDefault();paused=!paused;schedule()}};
+document.addEventListener('visibilitychange',schedule);schedule();carouselCleanup=()=>{clear();clearTimeout(settle);document.removeEventListener('visibilitychange',schedule)};
+}
+
+
+function projectGallery(p){const cover=p.cover||0;const imgs=[...p.images.filter((_,i)=>i!==cover),p.images[cover]];const photo=(im,i)=>`<figure>${image(im,`${p.title} — photograph ${i+1}`,'project-photo')}${im.caption?`<figcaption>${esc(im.caption)}</figcaption>`:''}</figure>`;return `<section class="project-photo-grid" aria-label="${esc(p.title)} project photographs">${[0,1].map(col=>`<div class="project-photo-column">${imgs.map((im,i)=>i%2===col?photo(im,i):'').join('')}</div>`).join('')}</section>`}
+function render(){stopCarousel();const path=location.hash.slice(2).split('/'), page=path[0]||'home';document.querySelectorAll('nav a').forEach(a=>{if(a.hash===`#/${page}`)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});let title='Xingye Sun';
+if(page==='home'){main.innerHTML=`${homeCarousel()}<section class="home-intro"><div class="home-name"><h1>XINGYE SUN</h1><p>Jewellery Artist & Designer</p></div><div class="home-statement">${paragraphs(D.statement)}<a class="home-more" href="#/about">READ MORE →</a></div></section><section class="home-section"><div class="home-section-head"><h2>Selected works</h2><a href="#/works">VIEW ALL WORKS →</a></div><div class="home-work-grid">${D.projects.slice(0,4).map(homeWork).join('')}</div></section><section class="home-bottom"><div class="home-about"><h2>About</h2><div class="home-about-body">${image(D.portrait,'Xingye Sun')}<div><p>${esc(D.biography[0])}</p><a class="home-more" href="#/about">READ MORE →</a></div></div></div><div class="home-exhibitions"><div class="home-section-head"><h2>Selected exhibitions</h2><a href="#/exhibitions">VIEW ALL →</a></div>${D.exhibitions.slice(0,3).map(e=>`<a class="home-exhibition" href="#/exhibitions/${e.slug}"><span>${e.year}</span><div>${esc(e.title.toUpperCase())}<small>${esc(e.venue)}</small></div></a>`).join('')}</div></section>`;startCarousel()}
+else if(page==='works'&&!path[1]){title='Works';main.innerHTML=`<div class="intro"><h1>Works</h1></div><div class="grid">${D.projects.map(card).join('')}</div>`}
+else if(page==='works'){const p=D.projects.find(p=>p.slug===path[1]);if(!p)return missing();title=p.title;const related=D.exhibitions.filter(e=>e.works.includes(p.slug));main.innerHTML=`<a class="back" href="#/works">← All works</a><div class="project-heading"><h1>${esc(p.title)}</h1></div><section class="project-layout"><div class="project-cover">${image(p.images[p.cover||0],p.title,'project-cover-image',true)}</div><div class="project-description"><div class="copy">${paragraphs(p.text)}</div><dl class="project-facts"><dt>Materials</dt><dd>${esc(p.materials)}</dd><dt>Year</dt><dd>${p.year}</dd><dt>Category</dt><dd>${esc(p.type)}</dd>${p.credits?`<dt>Credits</dt><dd>${esc(p.credits)}</dd>`:''}</dl></div></section>${projectGallery(p)}${related.length?`<div class="section-bar"><h2>Exhibited in</h2></div>${related.map(exRow).join('')}`:''}<div class="section-bar"><h2>Explore more</h2><a href="#/works">All works ↗</a></div><div class="grid">${D.projects.filter(x=>x!==p).slice(0,2).map(card).join('')}</div>`}
+else if(page==='exhibitions'&&!path[1]){title='Exhibitions';main.innerHTML=`<div class="intro"><h1>Exhibitions</h1></div>${D.exhibitions.map(exRow).join('')}`}
+else if(page==='exhibitions'){const e=D.exhibitions.find(x=>x.slug===path[1]);if(!e)return missing();title=e.title;main.innerHTML=`<a class="back" href="#/exhibitions">← All exhibitions</a><div class="project-heading"><h1>${esc(e.title.toUpperCase())}</h1></div><section class="exhibition-information"><div class="copy">${e.text?paragraphs(e.text):`<p>${esc(e.subtitle)}</p>`}<p class="exhibition-location">${esc(e.venue)}</p><p class="exhibition-date">${esc(e.dates)}</p>${e.url?`<p><a href="${esc(e.url)}" target="_blank" rel="noopener">Official exhibition information ↗</a></p>`:''}</div></section><section class="exhibition-photo-grid" aria-label="${esc(e.title)} exhibition photographs">${e.images.map((im,i)=>`<figure>${image(im,`${e.title} — exhibition photograph ${i+1}`,'project-photo')}${im.caption?`<figcaption>${esc(im.caption)}</figcaption>`:''}</figure>`).join('')}</section>${e.works.length?`<div class="section-bar"><h2>Related works</h2></div><div class="grid">${e.works.map(s=>card(D.projects.find(p=>p.slug===s))).join('')}</div>`:''}`}
+else if(page==='about'){title='About';main.innerHTML=`<div class="intro"><h1>About</h1><p>Xingye Sun · 孙星烨</p></div><div class="about-top"><div>${image(D.portrait,'Xingye Sun','portrait',true)}</div><div><section class="about-section"><h2>Biography</h2><div class="copy">${paragraphs(D.biography)}</div></section><section class="about-section"><h2>Artist Statement</h2><div class="copy">${paragraphs(D.statement)}</div></section></div></div><div class="credentials"><section><h2>Education & Qualifications</h2><br><div class="credential"><span>2023–Present</span><div>BA (Hons) Jewellery Design<small>Central Saint Martins, University of the Arts London</small></div></div><div class="credential"><span>2025</span><div>Graduate Diamonds Diploma (With Honors)<small>Gemological Institute of America (GIA)</small></div></div><div class="credential"><span>2022–2023</span><div>Foundation Diploma in Art and Design<small>Central Saint Martins, University of the Arts London</small></div></div></section><section><h2>Awards</h2><br><div class="credential"><span>2025</span><div>Cartier Award<small>Central Saint Martins, University of the Arts London</small></div></div></section></div>`}
 else if(page==='contact'){title='Contact';main.innerHTML=`<div class="contact"><h1>Contact</h1><div class="contact-row"><span class="eyebrow">Email</span><a href="mailto:monica2570781327@gmail.com">monica2570781327@gmail.com ↗</a></div><div class="contact-row"><span class="eyebrow">Location</span><span>London, UK / Suzhou, China</span></div><div class="contact-row"><span class="eyebrow">Instagram</span><a href="https://www.instagram.com/sun.x.y_art/" target="_blank" rel="noopener">@sun.x.y_art ↗</a></div></div>`}
-else return missing();document.title=title === 'Xingye Sun' ? 'Xingye Sun — Jewellery Artist' : `${title} — Xingye Sun`;window.scrollTo(0,0);main.querySelectorAll('.photos img,.lead-image').forEach(im=>im.addEventListener('click',()=>{const dialog=document.querySelector('dialog');dialog.querySelector('img').src=im.src;dialog.querySelector('img').alt=im.alt;dialog.querySelector('p').textContent=im.alt;dialog.showModal()}));}
-function exRow(e){return `<a class="exhibition-row" href="#/exhibitions/${e.slug}"><span class="eyebrow">${e.year}</span><div><h2>${esc(e.title)}</h2><small>${esc(e.subtitle)}</small></div><div class="venue"><p>${esc(e.venue)}</p><small>${e.dates}</small></div><span>↗</span></a>`}
+else return missing();document.title=title === 'Xingye Sun' ? 'Xingye Sun — Jewellery Artist' : `${title} — Xingye Sun`;window.scrollTo(0,0);main.querySelectorAll('.photos img,.lead-image,.project-cover-image,.project-detail-photo,.project-photo-grid img,.exhibition-photo-grid img').forEach(im=>im.addEventListener('click',()=>{const dialog=document.querySelector('dialog');dialog.classList.remove('is-zoomed');dialog.querySelector('#zoom-image').textContent='Zoom +';dialog.querySelector('.lightbox-scroll').scrollTo(0,0);dialog.querySelector('img').src=im.src;dialog.querySelector('img').alt=im.alt;dialog.querySelector('p').textContent=im.alt;dialog.showModal()}));}
+function exRow(e){return `<a class="exhibition-row" href="#/exhibitions/${e.slug}"><span class="eyebrow">${e.year}</span><div><h2>${esc(e.title.toUpperCase())}</h2><small>${esc(e.subtitle)}</small></div><div class="venue"><p>${esc(e.venue)}</p><small>${e.dates}</small></div><span>↗</span></a>`}
 function missing(){main.innerHTML='<div class="intro"><h1>Page not found</h1><a href="#/">Return home</a></div>'}
+
+const lightbox=document.querySelector('#lightbox');
+function toggleImageZoom(){const zoomed=lightbox.classList.toggle('is-zoomed');lightbox.querySelector('#zoom-image').textContent=zoomed?'Zoom −':'Zoom +';const viewport=lightbox.querySelector('.lightbox-scroll');if(zoomed){viewport.scrollLeft=(viewport.scrollWidth-viewport.clientWidth)/2;viewport.scrollTop=(viewport.scrollHeight-viewport.clientHeight)/2}else{viewport.scrollTo(0,0)}}
+lightbox.querySelector('#zoom-image').onclick=toggleImageZoom;
+const zoomViewport=lightbox.querySelector('.lightbox-scroll'),zoomPhoto=lightbox.querySelector('img');
+let imageDrag=null,suppressZoomClick=false;
+zoomPhoto.draggable=false;
+zoomPhoto.onclick=e=>{if(suppressZoomClick){suppressZoomClick=false;e.preventDefault();return}toggleImageZoom()};
+zoomViewport.addEventListener('pointerdown',e=>{if(!lightbox.classList.contains('is-zoomed')||e.button!==0)return;suppressZoomClick=false;imageDrag={id:e.pointerId,x:e.clientX,y:e.clientY,left:zoomViewport.scrollLeft,top:zoomViewport.scrollTop,moved:false};zoomViewport.setPointerCapture(e.pointerId);zoomViewport.classList.add('is-dragging');e.preventDefault()});
+zoomViewport.addEventListener('pointermove',e=>{if(!imageDrag||imageDrag.id!==e.pointerId)return;const dx=e.clientX-imageDrag.x,dy=e.clientY-imageDrag.y;if(Math.abs(dx)+Math.abs(dy)>4)imageDrag.moved=true;zoomViewport.scrollLeft=imageDrag.left-dx;zoomViewport.scrollTop=imageDrag.top-dy});
+function endImageDrag(e){if(!imageDrag||imageDrag.id!==e.pointerId)return;suppressZoomClick=imageDrag.moved;imageDrag=null;zoomViewport.classList.remove('is-dragging');if(zoomViewport.hasPointerCapture(e.pointerId))zoomViewport.releasePointerCapture(e.pointerId)}
+zoomViewport.addEventListener('pointerup',endImageDrag);zoomViewport.addEventListener('pointercancel',endImageDrag);zoomViewport.addEventListener('lostpointercapture',e=>{if(imageDrag&&imageDrag.id===e.pointerId){imageDrag=null;zoomViewport.classList.remove('is-dragging')}});
+lightbox.addEventListener('close',()=>{imageDrag=null;suppressZoomClick=false;zoomViewport.classList.remove('is-dragging')});
+
+
 document.querySelector('#close').onclick=()=>document.querySelector('dialog').close();document.querySelector('dialog').addEventListener('click',e=>{if(e.target.tagName==='DIALOG')e.target.close()});window.addEventListener('hashchange',render);render();
 
  document.querySelector('.skip').addEventListener('click',e=>{e.preventDefault();main.tabIndex=-1;main.focus()});
