@@ -121,9 +121,29 @@ header{padding:28px var(--page-inset)}main{padding:0 var(--page-inset)}footer{pa
  .works-index-grid .card .caption{display:flex!important;flex-direction:column;justify-content:flex-start;gap:14px;padding:13px 0;grid-column:2;grid-row:1}
  .works-index-grid .caption h3{font-size:16px;line-height:1.5;overflow-wrap:anywhere}
  .works-index-grid .caption small{font-size:12px;line-height:1.6}
- .works-index-grid .card:nth-child(even){grid-template-columns:1fr 1.5fr}
- .works-index-grid .card:nth-child(even) img{grid-column:2}
- .works-index-grid .card:nth-child(even) .caption{grid-column:1}
+ 
+ 
+ 
+}
+
+
+/* Mobile Works index matches the homepage image/text composition. */
+@media(max-width:700px){
+ .works-index-grid{grid-template-columns:minmax(0,1fr);gap:24px}
+ .works-index-grid .card{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:22px;align-items:start}
+ .works-index-grid .card img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;max-height:none}
+ .works-index-grid .card .caption{display:flex!important;flex-direction:column;justify-content:flex-start;gap:0;padding:13px 0}
+ .works-index-grid .caption h3{font-size:16px;line-height:1.4;margin:13px 0 8px}
+ .works-index-grid .caption small{font-size:12px;color:var(--muted)}
+}
+
+
+@media(max-width:700px){.works-index-grid .card-category{display:none}}
+
+@media(max-width:700px){
+ .works-index-grid .card{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}
+ .works-index-grid .card img{grid-column:1;grid-row:1}
+ .works-index-grid .card .caption{grid-column:2;grid-row:1}
 }
 
 </style></head><body><a class="skip" href="#main">Skip to content</a><header><a class="brand" href="#/">XINGYE SUN</a><nav aria-label="Main navigation"><a href="#/works">WORKS</a><a href="#/exhibitions">EXHIBITIONS</a><a href="#/about">ABOUT</a><a href="#/contact">CONTACT</a></nav></header><main id="main"></main><footer><span>Xingye Sun · 孙星烨</span><span>Jewellery & wearable objects</span><a href="https://www.instagram.com/sun.x.y_art/" target="_blank" rel="noopener">Instagram ↗</a></footer><dialog id="lightbox"><button aria-label="Close image" id="close">Close ×</button><button type="button" id="zoom-image" aria-label="Zoom image">Zoom +</button><div class="lightbox-scroll"><img alt=""></div><p></p></dialog><script>
@@ -614,7 +634,7 @@ const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'
 const image=(i,alt,cls='',eager=false)=>`<img class="${cls}" src="${i.src}" width="${i.width}" height="${i.height}" alt="${esc(alt)}" ${eager?'fetchpriority="high"':'loading="lazy"'}>`;
 const paragraphs=a=>a.map(p=>`<p>${esc(p)}</p>`).join('');
 function coverImage(p){const img=image(p.images[p.cover||0],p.title);return ['through-the-hand-seeing-the-scene','ripple','mango-mango'].includes(p.slug)?img.replace('<img ', '<img style="object-position:center 62%" '):img}
-const card=p=>`<a class="card" href="#/works/${p.slug}">${coverImage(p)}<div class="caption"><h3>${esc(p.title)}</h3><small>${p.year} · ${p.type}</small></div></a>`;
+const card=p=>`<a class="card" href="#/works/${p.slug}">${coverImage(p)}<div class="caption"><h3>${esc(p.title)}</h3><small><span>${p.year}</span><span class="card-category"> · ${p.type}</span></small></div></a>`;
 const gallery=(imgs,title)=>`<div class="photos">${imgs.map((i,n)=>`<figure>${image(i,`${title} — photograph ${n+1}`)}${i.caption?`<figcaption>${esc(i.caption)}</figcaption>`:''}</figure>`).join('')}</div>`;
 
 let carouselCleanup=null;
